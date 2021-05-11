@@ -7,7 +7,8 @@ var ejs = require('ejs');
 
 
 var indexRouter = require('./routes/index');
-var productsRouter = require('./routes/products');
+var products_l1Router = require('./routes/products_l1');
+var products_l2Router = require('./routes/products_l2');
 
 // var db = require('./routes/db');
 var app = express();
@@ -35,7 +36,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/products', productsRouter);
+app.use('/products_l1', products_l1Router);
+app.use('/products_l2', products_l2Router);
+
+
 
 
 
